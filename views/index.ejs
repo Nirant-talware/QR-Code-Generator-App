@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            text-align: center;
+        }
+        input[type="text"] {
+            margin-top: 10px;
+            padding: 10px;
+            width: 300px;
+        }
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        h2 {
+            margin-top: 50px;
+        }
+        img {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>QR Code Generator</h1>
+    <form action="/generate" method="POST">
+        <input type="text" name="url" placeholder="Enter URL or text" required />
+        <button type="submit">Generate</button>
+    </form>
+
+    <% if (qrCode) { %>
+        <h2>Your QR Code:</h2>
+        <img src="<%= qrCode %>" alt="QR Code" />
+    <% } %>
+</body>
+</html>
